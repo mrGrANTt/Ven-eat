@@ -1,0 +1,4 @@
+name: ven-eat
+version: '0.1-SNAPSHOT'
+main: org.mrg.venEat.VenEat
+api-version: '1.21'
