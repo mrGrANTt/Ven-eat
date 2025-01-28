@@ -24,7 +24,7 @@ public class Varebles {
 
     public static void lodeConfig() {
         furn_material = Material.getMaterial(Objects.requireNonNull(Varebles.getPlg().getConfig().getString("furn-material")));
-        save_mode = plg.getConfig().getBoolean("save-mod");
+        save_mode = plg.getConfig().getBoolean("save-mode");
         use_mySQL = plg.getConfig().getBoolean("mysql.use-mysql");
         mysql_user = plg.getConfig().getString("mysql.user");
         mysql_password = plg.getConfig().getString("mysql.password");

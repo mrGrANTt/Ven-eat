@@ -9,8 +9,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.inventory.FurnaceBurnEvent;
-import org.bukkit.event.inventory.FurnaceSmeltEvent;
-import org.bukkit.event.inventory.FurnaceStartSmeltEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -60,14 +58,12 @@ public class EventHandlerClass implements Listener {
 
     @EventHandler
     public void onFurnaceBurn(FurnaceBurnEvent ev) {
-        Varebles.getPlg().getLogger().info(ev.getBurnTime() + " - FurnaceBurn");
         FurnaceMethods.updateFurnaceFlaming(ev.getBlock(), true);
         new BukkitRunnable() {
             @Override
             public void run() {
                 if(ev.getBlock().getType() == Material.FURNACE) {
                     org.bukkit.block.data.type.Furnace furn = (org.bukkit.block.data.type.Furnace) ev.getBlock().getState().getBlockData();
-                    Varebles.getPlg().getLogger().info("check - " + furn.isLit());
                     if (!furn.isLit()) {
                         FurnaceMethods.updateFurnaceFlaming(ev.getBlock(), false);
                     }
