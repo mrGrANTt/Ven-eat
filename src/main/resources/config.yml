@@ -1,1 +1,14 @@
 furn-material: COBBLESTONE
+save-mode: false
+
+mysql:
+  use-mysql: false
+  ip: "localhost"
+  port: "3306"
+  db-name: "minecraft_data_base"
+  user: "user"
+  password: "admin"
+
+mysql-lite:
+  use-mysql-lite: true
+  file: "furnace.db"
