@@ -58,6 +58,9 @@ public class EventHandlerClass implements Listener {
 
     @EventHandler
     public void onFurnaceBurn(FurnaceBurnEvent ev) {
+        if(ev.getBlock().hasMetadata("FurnaceCenter")) {
+            ev.setBurnTime(ev.getBurnTime()/2);
+        }
         FurnaceMethods.updateFurnaceFlaming(ev.getBlock(), true);
         new BukkitRunnable() {
             @Override
